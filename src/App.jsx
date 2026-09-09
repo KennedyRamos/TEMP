@@ -2,10 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 //forms
-import Forms from './forms'
+import Form from './form'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Forms/>
+    <Form/>
   </StrictMode>,
 )
