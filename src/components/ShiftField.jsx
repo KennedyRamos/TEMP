@@ -1,16 +1,25 @@
 export default function ShiftField() {
     return (
-        <fieldset>
-            <legend>Turno:</legend>
+        <fieldset className="border-0 p-0">
+            <legend className="block text-sm font-bold text-white/80 mb-2">
+                Turno:
+            </legend>
 
-            <label htmlFor="T1">T1</label>
-            <input type="radio" name="shift" id="T1" value="T1" required />
-
-            <label htmlFor="T2">T2</label>
-            <input type="radio" name="shift" id="T2" value="T2" />
-
-            <label htmlFor="T3">T3</label>
-            <input type="radio" name="shift" id="T3" value="T3" />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+                {["T1", "T2", "T3"].map((turno, i) => (
+                    <label key={turno} htmlFor={turno} className="flex items-center gap-2 text-base font-light text-white/90"> 
+                        <input
+                            type="radio"
+                            name="shift"
+                            id={turno}
+                            value={turno}
+                            required={i === 0}
+                            className="w-5 h-5 accent-orange-shopee cursor-pointer"
+                        />
+                        {turno}
+                    </label>
+                ))}
+            </div>
         </fieldset>
     )
 }
