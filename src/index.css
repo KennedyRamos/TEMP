@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+    /* font */
+    --font-jb: "JetBrains Mono", monospace;
+
+    /* colors */
+    --color-dark: #0f0f0f;
+    --color-dark-soft: #191919;
+
+    --color-orange-shopee: #ee4d2d;
+    --color-orange-shopee-light: #f97d5f;
+    --color-orange-shopee-dark: #c73a1f;
+}
