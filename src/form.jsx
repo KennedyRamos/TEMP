@@ -1,41 +1,44 @@
 import { useState } from "react"
 
+// import components
 import DateField from "./components/DateField"
 import ShiftField from "./components/ShiftField"
 import LtField from "./components/LtField"
 import InspectedField from "./components/InspectedField"
 import PhotoUpload from "./components/PhotoUpload"
+import FormStatusMessage from "./components/FormStatusMessage"
+import ButtonSubmit from "./components/ButtonSubmit"
+
+// Hook
+import { useClosingForm } from "./hooks/useClosingForm"
+
+// import logo
+import shopee from "../src/assets/Shopee.svg"
 
 export default function Forms() {
-    const [photos, setPhotos] = useState([])
-
-    function handleSubmit(e) {
-        e.preventDefault()
-
-        const formData = new FormData(e.target)
-
-
-        formData.delete("photos")
-        photos.forEach((file) => {
-            formData.append("photos", file)
-        })
-
-
-        // TEMPORÁRIO
-        for (const [campo, valor] of formData.entries()) {
-            console.log(campo, ":", valor)
-        }
-    }
+    const { photos, status, handleFileChange, handleRemove, handleSubmit } = useClosingForm()
 
     return (
-        <form onSubmit={handleSubmit}>
-            <DateField />
-            <ShiftField />
-            <LtField />
-            <InspectedField />
-            <PhotoUpload photos={photos} setPhotos={setPhotos} />
+        <div className="min-h-screen bg-dark flex items-center justify-center p-4 font-jb">
+            <form
+                onSubmit={handleSubmit}
+                className="w-full max-w-md bg-dark-soft border-4 border-orange-shopee-light p-4 sm:p-6 rounded-lg shadow-[0_0_10px_rgba(249,125,95,0.4)] space-y-5"
+            >
+                <img src={shopee} alt="logo shopee" className="w-40 m-auto" />
+                <h1 className="text-white font-bold text-lg mb-2 text-center">Report Fechamento LT</h1>
 
-            <button type="submit">Enviar</button>
-        </form>
+                <DateField />
+                <ShiftField />
+                <LtField />
+                <InspectedField />
+                 <PhotoUpload
+                    photos={photos}
+                    onFileChange={handleFileChange}
+                    onRemove={handleRemove}
+                />
+                <FormStatusMessage status={status} />
+                <ButtonSubmit />
+            </form>
+        </div>
     )
 }
