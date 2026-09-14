@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 // import components
 import DateField from "./components/DateField"
 import ShiftField from "./components/ShiftField"
@@ -13,7 +11,7 @@ import ButtonSubmit from "./components/ButtonSubmit"
 import { useClosingForm } from "./hooks/useClosingForm"
 
 // import logo
-import shopee from "../src/assets/Shopee.svg"
+import dev from "../src/assets/dev.png"
 
 export default function Forms() {
     const { photos, status, handleFileChange, handleRemove, handleSubmit } = useClosingForm()
@@ -24,7 +22,7 @@ export default function Forms() {
                 onSubmit={handleSubmit}
                 className="w-full max-w-md bg-dark-soft border-x-4 border-orange-shopee-light p-4 sm:p-6 rounded-lg space-y-5"
             >
-                <img src={shopee} alt="logo shopee" className="w-40 m-auto" />
+                <img src={dev} alt="logo dev" className="w-30 m-auto" />
                 <h1 className="text-white font-bold text-lg mb-2 text-center">Report Fechamento LT</h1>
 
                 <DateField />
