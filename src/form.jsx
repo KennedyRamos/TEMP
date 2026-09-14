@@ -22,7 +22,7 @@ export default function Forms() {
         <div className="min-h-screen bg-dark flex items-center justify-center p-4 font-jb">
             <form
                 onSubmit={handleSubmit}
-                className="w-full max-w-md bg-dark-soft border-4 border-orange-shopee-light p-4 sm:p-6 rounded-lg shadow-[0_0_10px_rgba(249,125,95,0.4)] space-y-5"
+                className="w-full max-w-md bg-dark-soft border-x-4 border-orange-shopee-light p-4 sm:p-6 rounded-lg space-y-5"
             >
                 <img src={shopee} alt="logo shopee" className="w-40 m-auto" />
                 <h1 className="text-white font-bold text-lg mb-2 text-center">Report Fechamento LT</h1>
