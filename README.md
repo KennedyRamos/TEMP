@@ -3,6 +3,8 @@
 Formulário web para registro de vistorias de fechamento de LT, com envio direto para Google Sheets (dados estruturados) e Google Drive (fotos), sem necessidade de backend próprio ou autenticação.
 
 **Deploy:** [tempreportlt.netlify.app](https://tempreportlt.netlify.app/)
+**Planilha (demonstração):** [ver Google Sheets](https://docs.google.com/spreadsheets/d/1i4MF7HYlRK46TZZ6Cnui9ECFChR2UhTC3nFa61JbgC8/edit?gid=0#gid=0)
+> Ambiente de portfólio — dados enviados por testes públicos aparecem aqui.
 
 ---
 
